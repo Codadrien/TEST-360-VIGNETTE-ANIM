@@ -9,7 +9,15 @@
       "Bash(start viewer-seo.html)",
       "Bash(start viewer-hover.html)",
       "Bash(start gif-control.html)",
-      "Bash(start viewer-webp-optimized.html)"
+      "Bash(start viewer-webp-optimized.html)",
+      "Bash(mkdir:*)",
+      "Bash(php:*)",
+      "Bash(php.exe:*)",
+      "Bash(where php)",
+      "Bash(C:phpphp.exe -m)",
+      "Bash(findstr:*)",
+      "Read(//c/php/ext/**)",
+      "Bash(C:/php/php.exe:*)"
     ],
     "deny": [],
     "ask": []

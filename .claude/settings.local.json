@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(convert:*)",
+      "WebSearch",
+      "Bash(magick:*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(start viewer-seo.html)",
+      "Bash(start viewer-hover.html)",
+      "Bash(start gif-control.html)",
+      "Bash(start viewer-webp-optimized.html)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

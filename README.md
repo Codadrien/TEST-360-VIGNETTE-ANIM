@@ -70,3 +70,50 @@ $max_file_size = 20 * 1024;             // 20KB maximum
 - **Taille moyenne** : 1.81 KB par image
 - **Format privilégié** : WebP (meilleure compression)
 - **Fallback** : JPEG si WebP trop lourd
+
+## Visualiseur 360° (viewer-webp-php.html)
+
+### Logique JavaScript
+
+Le visualiseur utilise une **classe ES6 `WebPViewer360`** qui gère l'animation 360° des images optimisées.
+
+#### Fonctionnalités principales
+
+1. **Détection WebP** : Teste si le navigateur supporte WebP
+2. **Chargement intelligent** : Charge WebP si supporté, sinon fallback JPEG
+3. **Animation fluide** : 50ms entre chaque frame (20 FPS)
+4. **Modes d'animation** :
+   - **Initial** : 2 tours automatiques au démarrage
+   - **Hover** : Animation continue au survol
+   - **Finishing** : Finit le tour en cours quand on quitte le survol
+
+#### Architecture JavaScript
+
+```javascript
+class WebPViewer360 {
+    constructor() {
+        this.imageCount = 48;           // 48 images
+        this.frameDelay = 50;           // 50ms entre frames
+        this.imagePath = 'optimized-webp-php/';
+        this.images = [];               // Tableau des éléments img
+        this.currentIndex = 0;          // Image actuellement visible
+        this.isAnimating = false;       // État de l'animation
+        this.rotationCount = 0;         // Nombre de tours complets
+    }
+}
+```
+
+#### Méthodes clés
+
+- **`detectWebPSupport()`** : Détecte WebP via image base64
+- **`loadAllImages()`** : Charge toutes les images en parallèle
+- **`animate()`** : Boucle d'animation avec `requestAnimationFrame`
+- **`showNextFrame()`** : Affiche l'image suivante (système show/hide CSS)
+- **`setupEventListeners()`** : Gère survol souris + tactile mobile
+
+#### Performance
+
+- **Images préchargées** : Toutes les images sont en mémoire
+- **Animation optimisée** : `requestAnimationFrame` pour 60fps fluide
+- **Support mobile** : Événements tactiles inclus
+- **Fallback gracieux** : JPEG si WebP non supporté

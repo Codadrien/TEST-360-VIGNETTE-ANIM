@@ -17,7 +17,8 @@
       "Bash(C:phpphp.exe -m)",
       "Bash(findstr:*)",
       "Read(//c/php/ext/**)",
-      "Bash(C:/php/php.exe:*)"
+      "Bash(C:/php/php.exe:*)",
+      "Bash(git ls-tree:*)"
     ],
     "deny": [],
     "ask": []

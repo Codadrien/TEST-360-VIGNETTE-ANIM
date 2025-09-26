@@ -1,5 +1,7 @@
 # Optimisation d'images WebP avec PHP
 
+**🎯 [Visualiser la vignette 360° animée](https://codadrien.github.io/TEST-360-VIGNETTE-ANIM/)**
+
 ## Installation et Configuration
 
 ### Prérequis
